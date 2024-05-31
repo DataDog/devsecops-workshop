@@ -1,3 +1,7 @@
-venv
+venv/
 *~
-
+myvenv/
+myenv/
+myenv/
+__pycache__
+__pycache__/
