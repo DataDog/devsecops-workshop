@@ -28,10 +28,10 @@ def add_product(db_connection, product: Product):
         cursor.execute("INSERT INTO products (id, title) VALUES (NULL, '" + product.name+"');")
         db_connection.commit()
         return True
-    # a bare exception fails to captures the exact exceptions (and print it). The code should rather
+    # A bare exception fails to captures the exact exceptions (and print it). The code should rather
     # catch specific exceptions.
     # https://docs.datadoghq.com/code_analysis/static_analysis_rules/python-best-practices/no-bare-except/
-    # replace with the line below:
+    # Replace with the following: 
     # # except sqlite3.IntegrityError:
     except:
         return False
