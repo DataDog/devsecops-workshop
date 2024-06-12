@@ -1,10 +1,12 @@
-# Devsecops Demo
+# Practical DevSecOps Workshop Demo
 
-This repository is a demo for the DASH24 devsecops workshop. It contains a sample application
-with an API written in Python/Flask. We use this application to show how we can find
-security issues in projects and fix them.
+This repository is a demo for the DASH24 DevSecOps workshop. It contains a sample application
+with an API written in Python/Flask. This application is used to show how to find and fix
+security issues early in the software development lifecycle. 
 
-## Part 0: Getting started
+Note for workshop attendees: Ignore the instructions in this README and follow the instructions in your lab environment. 
+
+## Getting started
 
 Bootstrap the project
 
@@ -21,7 +23,7 @@ Start the project, invoke
 python service.py
 ```
 
-## Part 1: Use the API
+## Using the API
 
 
 ### List all products
@@ -46,7 +48,7 @@ curl -H "Content-Type: application/json" -X POST --data '{"name": "<product-name
 Navigate to <ENTER-URL>
 
 
-## Part 2: onboard the project on Datadog
+## Onboarding the project to Datadog
 
 1. Navigate to your repository settings
 2. Add a secrets for `DD_API_KEY` and `DD_APP_KEY`
@@ -60,7 +62,7 @@ Navigate to <ENTER-URL>
 9. You should see resutls on the Datadog page
 10. Inspect the static analysis violations and dependencies violations
 
-## Part 3: IDE and static analysis
+## Static Analysis in the IDE 
 
 1. Open the IDE
 2. Open the folder that contains the code
@@ -69,7 +71,7 @@ Navigate to <ENTER-URL>
 5. Once all issues fixed, commit your results: `git commit -m"update flask" && git push`
 6. No violation should be found in Datadog for the static analysis
 
-## Part 4: Software Composition Analysis
+## Software Composition Analysis
 
 1. Open the datadog interface and see the violation
 2. See the new version that fixes the issue
