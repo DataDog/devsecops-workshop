@@ -28,7 +28,7 @@ def apiProduct_add():
     logging.info("adding product {0}".format(product.name)) 
     success = db.add_product(db_connection, product)
 
-    # The else is not necessary here, we can remove it by applying the suggested fix.
+    # The else is not necessary here, remove it by applying the suggested fix.
     if success:
         return jsonify({"status": "ok"}), 200
     else:
