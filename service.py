@@ -17,6 +17,19 @@ def apiProduct_list():
     return jsonify(products)
 
 
+
+@app.route("/api/product/get-hash", methods=["GET"])
+def getProductHash():
+    import hashlib
+    products = db.get_products(db_connection, 100, 0)
+    product_id = int(request.args.get('pid', 0))
+    if product_id == 0:
+        return "error, specify a product id", 500
+    if product_id > len(products):
+        return "invalid product id", 500
+    hash = hashlib.sha256(products[product_id].name.encode('utf-8')).hexdigest()
+    return hash
+
 # API to add a product
 @app.route("/api/product/add", methods=["POST"])
 def apiProduct_add():
@@ -25,7 +38,7 @@ def apiProduct_add():
 
     # Logging should not have the format string. Just use
     # logging.info("adding product %s", product.name)
-    logging.info("adding product {0}".format(product.name)) 
+    logging.info("adding product {0}".format(product.name))
     success = db.add_product(db_connection, product)
 
     # The else is not necessary here, we can remove it.
