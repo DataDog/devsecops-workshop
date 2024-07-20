@@ -39,6 +39,7 @@ def apiProduct_add():
     # Logging should not have the format string. Just use
     # logging.info("adding product %s", product.name)
     logging.info("adding product {0}".format(product.name))
+    logging.info("adding product {0}".format(product.name))
     success = db.add_product(db_connection, product)
 
     # The else is not necessary here, we can remove it.
